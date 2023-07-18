@@ -22,7 +22,7 @@ def transparentOverlay(src, overlay, pos=(0, 0), scale=1):
         for j in range(w):
             if x + i > rows or y + j >= cols:
                 continue
-            alpha = float(overlay[i][j][3] / 255)  ##  read the alpha chanel
+            alpha = float(overlay[i][j][3] / 255)  ##  read the alpha channel
             src[x + i][y + j] = alpha * overlay[i][j][:3] + (1 - alpha) * src[x + i][y + j]
     return src
 
@@ -49,7 +49,7 @@ while run:
                 sh_mus = mus_symax - mus_symin
 
                 face_glass_ori = frame[glass_symin:glass_symax, x:x + w]
-                cigar_glass_ori = frame[cigar_symin:cigar_symax, x + w:x + w]
+                cigar_glass_ori = frame[cigar_symin:cigar_symax, x+w:2*x]
                 mus_glass_ori = frame[mus_symin:mus_symax, x:x + w]
 
                 glass = cv2.resize(specs_ori, (w, sh_glass), interpolation=cv2.INTER_CUBIC)

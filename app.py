@@ -11,7 +11,6 @@ specs_ori = cv2.imread("glass.png", -1)
 cigar_ori = cv2.imread("cigar.png", -1)
 mus_ori = cv2.imread("mustache.png", -1)
 
-
 def transparentOverlay(src, overlay, pos=(0, 0), scale=1):
     overlay = cv2.resize(overlay, (0, 0), fx=scale, fy=scale)
     h, w, _ = overlay.shape  ## size of foreground image
